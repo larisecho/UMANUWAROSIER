@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ELIL ROSIER ESPITIA — Modelo, Fotografía & Idiomas | Bogotá</title>
+<meta name="description" content="Portafolio oficial de Elil Rosier Espitia — modelaje, fotografía de animales de compañía, baile en eventos y coaching de inmersión de idiomas en Bogotá.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* ====== CONFIG DE TEXTO — edita aquí ====== */
+    --name: "Elil Rosier Espitia";
+    --tagline: "Modelo · Fotografía de compañía · Idiomas · Presencia en eventos";
+    --location: "Bogotá, Colombia";
+    --email: "aethervisualsart@gmail.com";
+    --phone-display: "+57 315 611 0435";
+
+    /* paleta — editorial clara, distinta a la versión anterior */
+    --paper:   #F2EFE8;
+    --paper-2: #E9E4D8;
+    --ink:     #1B1B16;
+    --ink-dim: #5B5749;
+    --moss:    #33463A;
+    --brass:   #A9825A;
+    --line:    #D9D2C0;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; scroll-padding-top: env(safe-area-inset-top,0px); }
+  body{
+    background: var(--paper); color: var(--ink);
+    font-family:'Inter', ui-sans-serif, system-ui, sans-serif;
+    padding-top: env(safe-area-inset-top,0px);
+    padding-bottom: env(safe-area-inset-bottom,0px);
+  }
+  h1,h2,.display{ font-family:'Fraunces', Georgia, serif; font-weight:400; }
+  a{ color:inherit; text-decoration:none; }
+  .wrap{ max-width: 1100px; margin:0 auto; padding:0 28px; }
+
+  /* draft banner */
+  .draft-banner{
+    background: var(--ink); color: var(--paper);
+    font-size: 12px; text-align:center; padding: 8px 16px;
+  }
+
+  nav{
+    position: sticky; top: env(safe-area-inset-top,0px);
+    background: rgba(242,239,232,0.92); backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line); z-index: 10;
+  }
+  nav .wrap{ display:flex; justify-content:space-between; align-items:center; height:64px; flex-wrap:wrap; }
+  .nav-name{ font-family:'Fraunces',serif; font-size:16px; letter-spacing:0.02em; }
+  .nav-links{ display:flex; gap:26px; font-size:13px; color:var(--ink-dim); }
+  .nav-links a:hover{ color:var(--moss); }
+  @media (max-width:720px){ .nav-links{ display:none; } }
+
+  .hero{
+    min-height: 72vh; display:flex; flex-direction:column;
+    justify-content:center; padding: 70px 0 50px;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero .eyebrow{ font-size:12px; letter-spacing:0.08em; color:var(--brass); margin-bottom:18px; }
+  .hero h1{ font-size: clamp(42px, 7vw, 84px); line-height:1.0; max-width:18ch; }
+  .hero .tagline{ margin-top:20px; font-size: clamp(15px,2vw,18px); color:var(--ink-dim); max-width:48ch; }
+  .hero .meta{ margin-top:28px; font-size:13px; color:var(--ink-dim); display:flex; gap:16px; flex-wrap:wrap; }
+  .hero .meta span.dot{ color:var(--brass); }
+
+  section{ padding: 80px 0; border-bottom:1px solid var(--line); }
+  section:last-of-type{ border-bottom:none; }
+  .section-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:40px; gap:16px; flex-wrap:wrap; }
+  .section-head h2{ font-size: clamp(26px,3.6vw,38px); }
+  .section-head .note{ font-size:12px; color:var(--ink-dim); }
+
+  /* services */
+  .services{ display:grid; grid-template-columns: repeat(2,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+  @media (max-width:720px){ .services{ grid-template-columns:1fr; } }
+  .service{ background:var(--paper); padding:32px; }
+  .service h3{ font-family:'Fraunces',serif; font-size:20px; margin-bottom:10px; }
+  .service p{ font-size:14px; color:var(--ink-dim); line-height:1.6; }
+  .service .genres{ margin-top:10px; font-size:12px; color:var(--brass); }
+
+  /* reel */
+  .reel-frame{
+    position:relative; width:100%; aspect-ratio:16/9;
+    background:var(--ink); border:1px solid var(--line);
+  }
+  .reel-frame iframe{ width:100%; height:100%; border:0; }
+  .reel-note{ margin-top:14px; font-size:12px; color:var(--ink-dim); }
+
+  /* portfolio */
+  .gallery-block{ margin-bottom: 46px; }
+  .gallery-block h3{ font-family:'Fraunces',serif; font-size:18px; margin-bottom:16px; }
+  .grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:12px; }
+  @media (max-width:720px){ .grid{ grid-template-columns: repeat(2,1fr); } }
+  .frame{ aspect-ratio:4/5; background:var(--paper-2); border:1px solid var(--line); overflow:hidden; }
+  .frame img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .empty-note{ grid-column: 1/-1; font-size:13px; color:var(--ink-dim); padding: 30px 0; border:1px dashed var(--line); text-align:center; }
+
+  /* slideshow — estilo editorial de revista, usado en Evolución de Marca Ética */
+  .slideshow{ position:relative; background:var(--ink); aspect-ratio: 4/3; overflow:hidden; }
+  @media (min-width:720px){ .slideshow{ aspect-ratio: 16/9; } }
+  .slideshow .slide{
+    position:absolute; inset:0; opacity:0; transition: opacity 0.5s ease;
+    display:flex; align-items:flex-end;
+  }
+  .slideshow .slide.active{ opacity:1; }
+  .slideshow .slide img{ width:100%; height:100%; object-fit:cover; position:absolute; inset:0; }
+  .slideshow .caption{
+    position:relative; z-index:1; padding:20px 24px; color:var(--paper);
+    background: linear-gradient(to top, rgba(0,0,0,0.55), transparent);
+    width:100%; font-size:13px; letter-spacing:0.03em;
+  }
+  .slideshow-nav{ position:absolute; bottom:16px; right:16px; z-index:2; display:flex; gap:8px; }
+  .slideshow-nav button{
+    background: rgba(242,239,232,0.85); border:none; width:32px; height:32px;
+    font-family:'Inter'; font-size:14px; cursor:pointer;
+  }
+  .slideshow-nav button:hover{ background: var(--paper); }
+
+  /* tarjeta de enlace externo (TikTok) */
+  .link-out{
+    display:flex; justify-content:space-between; align-items:center; gap:16px;
+    background:var(--paper-2); border:1px solid var(--line); padding:22px 26px; flex-wrap:wrap;
+  }
+  .link-out h3{ font-family:'Fraunces',serif; font-size:18px; margin-bottom:6px; }
+  .link-out p{ font-size:13px; color:var(--ink-dim); }
+  .link-out a.btn-link{
+    background:var(--moss); color:var(--paper); padding:10px 18px; font-size:13px; font-weight:600;
+    white-space:nowrap;
+  }
+  .link-out a.btn-link:hover{ background:var(--ink); }
+
+  /* booking form */
+  .booking{ display:grid; grid-template-columns: 1fr 1fr; gap:16px; }
+  @media (max-width:720px){ .booking{ grid-template-columns:1fr; } }
+  .field{ display:flex; flex-direction:column; gap:6px; }
+  .field label{ font-size:12px; color:var(--ink-dim); }
+  .field select, .field input, .field textarea{
+    background:var(--paper); border:1px solid var(--line); padding:12px;
+    font-family:'Inter'; font-size:14px; color:var(--ink);
+  }
+  .field.full{ grid-column: 1/-1; }
+  .booking-note{ grid-column:1/-1; font-size:12px; color:var(--ink-dim); }
+  .btn{
+    grid-column:1/-1; background:var(--moss); color:var(--paper);
+    padding:14px 22px; border:none; font-family:'Inter'; font-size:14px;
+    font-weight:600; cursor:pointer; width: fit-content;
+  }
+  .btn:hover{ background:var(--ink); }
+
+  /* inspirations */
+  details{ border-bottom:1px solid var(--line); padding:16px 0; }
+  summary{ cursor:pointer; font-family:'Fraunces',serif; font-size:17px; }
+  details ul{ margin-top:12px; padding-left:20px; font-size:13px; color:var(--ink-dim); line-height:1.8; }
+
+  /* legal */
+  .legal-block{ font-size:12px; color:var(--ink-dim); line-height:1.7; margin-bottom:20px; max-width:70ch; }
+  .legal-block strong{ color:var(--ink); }
+
+  footer{ padding: 30px 0 calc(30px + env(safe-area-inset-bottom,0px)); font-size:12px; color:var(--ink-dim); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+  footer a:hover{ color:var(--moss); }
+
+  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
+</style>
+</head>
+<body>
+
+<div class="draft-banner">Sitio en evolución constante — versión borrador, puede contener texto sin pulir mientras se actualiza.</div>
+
+<nav>
+  <div class="wrap">
+    <div class="nav-name" id="nav-name"></div>
+    <div class="nav-links">
+      <a href="#servicios">Servicios</a>
+      <a href="#reel">Reel</a>
+      <a href="#portafolio">Portafolio</a>
+      <a href="#reservar">Reservar</a>
+      <a href="#inspiraciones">Inspiraciones</a>
+      <a href="#legal">Aviso legal</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">PORTAFOLIO OFICIAL</div>
+    <h1 id="hero-name"></h1>
+    <p class="tagline" id="hero-tagline"></p>
+    <div class="meta">
+      <span id="hero-location"></span>
+      <span class="dot">·</span>
+      <span>Español (nativo) · Inglés (C2) · Alemán (B1)</span>
+    </div>
+  </div>
+</header>
+
+<section id="servicios">
+  <div class="wrap">
+    <div class="section-head"><h2>Servicios</h2></div>
+    <div class="services">
+      <div class="service">
+        <h3>Fotografía de animales de compañía</h3>
+        <p>Sesiones a domicilio para gatos y perros medianos, luz natural, entrega digital editada.</p>
+      </div>
+      <div class="service">
+        <h3>Baile en eventos / cabina DJ</h3>
+        <p>Presencia y baile en eventos privados o de club, coordinado previamente con el lugar y el organizador.</p>
+        <div class="genres">Dancehall · Afrobeats · Deep House · Melodic House · Techno · Progressive Techno</div>
+      </div>
+      <div class="service">
+        <h3>Coaching de inmersión de idiomas</h3>
+        <p>Conversación práctica orientada a fluidez oral real, actualmente en inglés y español.</p>
+      </div>
+      <div class="service">
+        <h3>Modelaje comercial y editorial</h3>
+        <p>Polaroids, digitales y colaboraciones editoriales bajo un marco de modelaje ético — ver sección de reserva.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reel">
+  <div class="wrap">
+    <div class="section-head"><h2>Reel</h2><div class="note">Video de presentación</div></div>
+    <div class="reel-frame">
+      <iframe id="reel-iframe" src="" title="Reel" allowfullscreen></iframe>
+    </div>
+    <p class="reel-note">Para actualizar: reemplaza <code>REEL_YOUTUBE_ID</code> en el código con el ID de tu video de YouTube (la parte después de "v=" en la URL).</p>
+
+    <div class="link-out" style="margin-top:24px;">
+      <div>
+        <h3>Baile en eventos / cabina DJ</h3>
+        <p>Los videos de baile en vivo y en eventos se publican en TikTok.</p>
+      </div>
+      <a class="btn-link" id="tiktok-link" href="#" target="_blank">Ver en TikTok →</a>
+    </div>
+  </div>
+</section>
+
+<section id="portafolio">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Portafolio</h2>
+      <div class="note">Se actualiza solo al subir fotos a GitHub</div>
+    </div>
+
+    <div class="gallery-block">
+      <h3>Polaroids / Digitales</h3>
+      <div class="grid" id="grid-polaroids"></div>
+    </div>
+    <div class="gallery-block">
+      <h3>Evolución de Marca Ética</h3>
+      <p style="font-size:13px; color:var(--ink-dim); margin-bottom:16px;">Fotografías que reflejan mi evolución modelando de forma ética para marcas y productos — trabajo especulativo pensado para futuras colaboraciones.</p>
+      <div class="slideshow" id="slideshow-campaign">
+        <div class="slideshow-nav">
+          <button id="slide-prev">‹</button>
+          <button id="slide-next">›</button>
+        </div>
+      </div>
+    </div>
+    <div class="gallery-block">
+      <h3>Mascotas</h3>
+      <div class="grid" id="grid-mascotas"></div>
+    </div>
+    <div class="gallery-block">
+      <h3>Eventos</h3>
+      <div class="grid" id="grid-eventos"></div>
+    </div>
+  </div>
+</section>
+
+<section id="reservar">
+  <div class="wrap">
+    <div class="section-head"><h2>Reservar / Cotizar</h2></div>
+    <form class="booking" id="booking-form">
+      <div class="field">
+        <label for="tipo-evento">Tipo de evento</label>
+        <select id="tipo-evento">
+          <option>Evento corporativo</option>
+          <option>Fiesta privada</option>
+          <option>Club / discoteca</option>
+          <option>Feria o festival</option>
+          <option>Sesión fotográfica</option>
+          <option>Producción editorial o comercial</option>
+          <option>Otro</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="formato">Formato</label>
+        <select id="formato">
+          <option>Presencial</option>
+          <option>Virtual</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="fecha">Fecha propuesta</label>
+        <input type="date" id="fecha">
+      </div>
+      <div class="field">
+        <label for="lugar">Lugar / ciudad</label>
+        <input type="text" id="lugar" placeholder="Ej. Bogotá">
+      </div>
+      <div class="field full">
+        <label for="detalle">Detalles adicionales</label>
+        <textarea id="detalle" rows="3" placeholder="Duración, número de personas, presupuesto estimado..."></textarea>
+      </div>
+      <p class="booking-note">El precio final depende del tipo de evento, duración, ubicación y desplazamiento. Al enviar, se abrirá WhatsApp con un mensaje prellenado para coordinar directamente.</p>
+      <button type="button" class="btn" id="send-booking">Enviar solicitud por WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+<section id="inspiraciones">
+  <div class="wrap">
+    <div class="section-head"><h2>Inspiraciones del sitio</h2></div>
+    <details>
+      <summary>Sitios web (diseño y estructura)</summary>
+      <ul>
+        <li><strong>unomodels.com</strong> — estructura de perfil individual de modelo y presentación de datos físicos.</li>
+        <li><strong>ruthfranco.com</strong> — formato de reel/demo y presentación de talento.</li>
+        <li><strong>rojalondon.com</strong> — menús desplegables superiores y estética editorial de perfumería.</li>
+        <li><strong>franciskurkdjian.com / initioparfums.com</strong> — minimalismo tipográfico de lujo.</li>
+        <li><strong>dovecameron.com</strong> — estructura de pie de página con políticas legales.</li>
+        <li><strong>cramtalent.com</strong> — jerarquía de íconos de redes sociales.</li>
+      </ul>
+    </details>
+    <details>
+      <summary>人 — Inspiraciones de vida singular</summary>
+      <p style="font-size:13px; color:var(--ink-dim); margin-top:10px;">Espacio reservado para reconocer personas cuya presencia inspira esta evolución creativa. Se actualizará con el consentimiento explícito de cada persona antes de nombrarla públicamente.</p>
+    </details>
+  </div>
+</section>
+
+<section id="legal">
+  <div class="wrap">
+    <div class="section-head"><h2>Aviso legal</h2></div>
+    <div class="legal-block">
+      <strong>ES —</strong> Todo el contenido original de este sitio (estructura, textos y material visual) es propiedad de Elil Rosier Espitia y está protegido automáticamente por el Convenio de Berna y la Ley 23 de 1982 de Colombia. La reproducción textual debe citarse con nombre del autor y enlace del sitio. Infracciones en Colombia pueden reportarse a la Fiscalía General de la Nación: línea gratuita nacional 122, o 01 8000 9197 48, fiscalia.gov.co.
+    </div>
+    <div class="legal-block">
+      <strong>EN —</strong> All original content on this site is the property of Elil Rosier Espitia and is automatically protected under the Berne Convention and Colombian Law 23 of 1982. Textual reproduction must be credited with author name and site link.
+    </div>
+    <div class="legal-block">
+      Este sitio no ofrece ni promociona servicios de contenido para adultos. Cualquier actividad de ese tipo se gestiona en canales completamente separados y no vinculados a esta página.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:10px;">
+    <span id="footer-name"></span>
+    <span>
+      <a id="footer-email" href="#"></a> ·
+      <a id="footer-whatsapp" href="#">WhatsApp</a> ·
+      <a href="https://fiscalia.gov.co" target="_blank">Fiscalía General</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+  /* ====== CONFIG — edita estos dos valores con tu usuario y repositorio de GitHub ====== */
+  const GITHUB_USER = "larisecho";
+  const GITHUB_REPO = "UMANUWAROSIER";
+  const REEL_YOUTUBE_ID = "CcKe-NTfUXc";
+  const TIKTOK_HANDLE = "umanuwarosier"; // confirma que esta ortografía es correcta
+
+  /* Rutas de carpetas dentro del repositorio — crea estas carpetas y sube fotos ahí */
+  const CATEGORY_FOLDERS = {
+    "grid-polaroids": "assets/portfolio/polaroids",
+    "grid-mascotas":  "assets/portfolio/mascotas",
+    "grid-eventos":   "assets/portfolio/eventos"
+  };
+  const SPEC_CAMPAIGN_FOLDER = "assets/portfolio/marca-etica";
+
+  const NAME = getComputedStyle(document.documentElement).getPropertyValue('--name').replace(/"/g,'').trim();
+  const TAGLINE = getComputedStyle(document.documentElement).getPropertyValue('--tagline').replace(/"/g,'').trim();
+  const LOCATION = getComputedStyle(document.documentElement).getPropertyValue('--location').replace(/"/g,'').trim();
+  const EMAIL = getComputedStyle(document.documentElement).getPropertyValue('--email').replace(/"/g,'').trim();
+  const PHONE = getComputedStyle(document.documentElement).getPropertyValue('--phone-display').replace(/"/g,'').trim();
+
+  document.getElementById('nav-name').textContent = NAME;
+  document.getElementById('hero-name').textContent = NAME;
+  document.getElementById('hero-tagline').textContent = TAGLINE;
+  document.getElementById('hero-location').textContent = LOCATION;
+  document.getElementById('footer-name').textContent = NAME;
+  document.getElementById('footer-email').textContent = EMAIL;
+  document.getElementById('footer-email').href = "mailto:" + EMAIL;
+  document.getElementById('footer-whatsapp').href = "https://wa.me/" + PHONE.replace(/[^0-9]/g,'');
+
+  document.getElementById('reel-iframe').src = "https://www.youtube.com/embed/" + REEL_YOUTUBE_ID;
+  document.getElementById('tiktok-link').href = "https://www.tiktok.com/@" + TIKTOK_HANDLE;
+
+  // ---- Carga dinámica de fotos desde carpetas de GitHub ----
+  async function loadFolder(containerId, folderPath){
+    const container = document.getElementById(containerId);
+    if(!container) return;
+    try{
+      const res = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${folderPath}`);
+      if(!res.ok) throw new Error("folder not found");
+      const files = await res.json();
+      const images = Array.isArray(files) ? files.filter(f => /\.(jpe?g|png|webp)$/i.test(f.name)) : [];
+      if(images.length === 0){
+        container.innerHTML = `<div class="empty-note">Aún no hay fotos en esta categoría — súbelas a <code>${folderPath}</code> en GitHub.</div>`;
+        return;
+      }
+      container.innerHTML = images.map(f => `<div class="frame"><img src="${f.download_url}" alt="${f.name}" loading="lazy"></div>`).join('');
+    }catch(err){
+      container.innerHTML = `<div class="empty-note">Configura GITHUB_USER y GITHUB_REPO en el código, y crea la carpeta <code>${folderPath}</code> en tu repositorio.</div>`;
+    }
+  }
+  Object.entries(CATEGORY_FOLDERS).forEach(([id, path]) => loadFolder(id, path));
+
+  // ---- Slideshow de Evolución de Marca Ética (estilo editorial de revista) ----
+  async function loadSlideshow(){
+    const container = document.getElementById('slideshow-campaign');
+    const navHtml = container.querySelector('.slideshow-nav').outerHTML;
+    try{
+      const res = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${SPEC_CAMPAIGN_FOLDER}`);
+      if(!res.ok) throw new Error("folder not found");
+      const files = await res.json();
+      const images = Array.isArray(files) ? files.filter(f => /\.(jpe?g|png|webp)$/i.test(f.name)) : [];
+      if(images.length === 0){
+        container.innerHTML = `<div class="empty-note" style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:var(--paper);">Aún no hay fotos — súbelas a <code>${SPEC_CAMPAIGN_FOLDER}</code> en GitHub.</div>`;
+        return;
+      }
+      let current = 0;
+      const slidesHtml = images.map((f, i) => `
+        <div class="slide ${i===0?'active':''}" data-idx="${i}">
+          <img src="${f.download_url}" alt="${f.name}" loading="lazy">
+          <div class="caption">${f.name.replace(/\.(jpe?g|png|webp)$/i,'').replace(/[_-]/g,' ')}</div>
+        </div>
+      `).join('');
+      container.innerHTML = slidesHtml + navHtml;
+
+      const slides = container.querySelectorAll('.slide');
+      const show = (idx) => {
+        slides.forEach(s => s.classList.remove('active'));
+        slides[idx].classList.add('active');
+        current = idx;
+      };
+      container.querySelector('#slide-prev').addEventListener('click', () => show((current - 1 + slides.length) % slides.length));
+      container.querySelector('#slide-next').addEventListener('click', () => show((current + 1) % slides.length));
+    }catch(err){
+      container.innerHTML = `<div class="empty-note" style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:var(--paper); text-align:center; padding:0 20px;">Configura GITHUB_USER y GITHUB_REPO, y crea la carpeta <code>${SPEC_CAMPAIGN_FOLDER}</code>.</div>`;
+    }
+  }
+  loadSlideshow();
+
+  // ---- Formulario de reserva -> WhatsApp ----
+  document.getElementById('send-booking').addEventListener('click', () => {
+    const tipo = document.getElementById('tipo-evento').value;
+    const formato = document.getElementById('formato').value;
+    const fecha = document.getElementById('fecha').value || "por confirmar";
+    const lugar = document.getElementById('lugar').value || "por confirmar";
+    const detalle = document.getElementById('detalle').value || "sin detalles adicionales";
+    const msg = `Hola, quiero cotizar una reserva.%0ATipo de evento: ${tipo}%0AFormato: ${formato}%0AFecha: ${fecha}%0ALugar: ${lugar}%0ADetalles: ${detalle}`;
+    window.open(`https://wa.me/${PHONE.replace(/[^0-9]/g,'')}?text=${msg}`, '_blank');
+  });
+</script>
+
+</body>
+</html>
